@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PostCode</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+  
+  </head>
+  <body>
+    <div class="container">
+      <div class="forms-container">
+        <div class="signin-signup">
+          <form action="" class="sign-in-form">
+            <h2 class="title">Generate ur Random Code</h2>
+
+            <button onclick="generateCode()" id="generateButton">Genereren</button>
+        
+            <div id="generatedCode"></div>
+        
+            <script>
+                function generateCode() {
+                    var button = document.getElementById('generateButton');
+                    if (!button.hasAttribute('disabled')) {
+                        // Hier kun je de logica toevoegen om een willekeurige code te genereren
+                        var randomCode = Math.floor(Math.random() * 1000000);
+                        document.getElementById('generatedCode').innerText = 'Willekeurige code: ' + randomCode;
+        
+                        // Schakel de knop uit en stel de cooldown in (20 seconden)
+                        button.setAttribute('disabled', 'true');
+                        setTimeout(function () {
+                            button.removeAttribute('disabled');
+                        }, 600000);
+                    }
+                }
+            </script>
+
+           
+          </form>
+       
+        </div>
+      </div>
+      <div class="panels-container">
+
+        <div class="panel left-panel">
+            <div class="content">
+                <h3>Made by Niel Compernol & Louis Dupont</h3>
+                <img src="img/Logo_Hogeschool_VIVES.jpg" style="height: 130px;" alt="">
+            </div>
+            <img src="./img/log.svg" class="image" alt="">
+        </div>
+
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
